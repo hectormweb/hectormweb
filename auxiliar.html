@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vista Markdown</title>
+</head>
+<body>
+  <div id="contenido-md"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('auxiliar.md')
+      .then(response => response.text())
+      .then(texto => {
+        document.getElementById('contenido-md').innerHTML = marked.parse(texto);
+      });
+  </script>
+</body>
+</html>
